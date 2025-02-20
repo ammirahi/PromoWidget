@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/config.xsd">
+    <default>
+        <promo_widget>
+            <general>
+                <enable>0</enable>
+            </general>
+            <content>
+                <message_text>Profitez de notre offre spéciale !</message_text>
+                <background_color>#ffcc00</background_color>
+            </content>
+        </promo_widget>
+    </default>
+</config>

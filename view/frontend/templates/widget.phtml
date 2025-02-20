@@ -1,0 +1,38 @@
+<?php
+
+/** @var \Ammi\PromoWidget\Helper\Data $helper */
+$helper = $this->helper(\Ammi\PromoWidget\Helper\Data::class);
+
+if (!$helper->isEnabled()) {
+    return; 
+}
+
+$formData = [
+    'messageText' => $block->getMessageText(),
+    'backgroundColor' => $block->getBackgroundColor(),
+];
+$serializedFormData = $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($formData);
+?>
+
+<div id="promo-widget-container" class="promo-widget-container">
+    <!-- Knockout UI Component -->
+    <div data-bind="scope: 'promoWidget'">
+        <!-- Injecte le composant Knockout -->
+        <div data-bind="template: getTemplate()"></div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#promo-widget-container": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "promoWidget": {
+                    "component": "promoWidget",
+                    "config": <?php /* @noEscape */ echo $serializedFormData; ?>
+                }
+            }
+        }
+    }
+}
+</script>

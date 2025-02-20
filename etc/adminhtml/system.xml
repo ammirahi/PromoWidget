@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <tab id="promo_settings" translate="label" sortOrder="100">
+            <label>Paramètres Promotionnels</label>
+        </tab>
+        <section id="promo_widget" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Widget Promotionnel</label>
+            <tab>promo_settings</tab>
+            <resource>Ammi_PromoWidget::config</resource>
+
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Configuration</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Module</comment>
+                </field>
+            </group>
+
+            <group id="content" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Manage Content</label>
+                <field id="message_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Promotional Message</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field</frontend_model>
+                </field>
+                <field id="background_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background color</label>
+                    <frontend_model>Ammi\PromoWidget\Block\Adminhtml\Config\Form\Field\ColorPicker</frontend_model>
+                </field>
+            </group>
+
+            <group id="product_information" translate="label" type="text" sortOrder="700" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Information</label>
+                <field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>
+                        <![CDATA[
+                            <p>Author: <a target="_blank" title="Ait ammi" href="https://magammi.aitammi.com/">Magento AIT AMMI</a></p>
+                            <p>Vesion: 1.0.0</p>
+						]]>
+                    </label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

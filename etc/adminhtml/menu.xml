@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update 
+            id="Ammi_Extensions::ammiextensions" 
+            title="AIT AMMI Extensions" 
+            module="Magento_Backend" sortOrder="22" 
+            resource="Ammi_Extensions::ammiextensions"/>
+
+        <add 
+            id="Ammi_PromoWidget::main_menu" 
+            title="Promo Widget In Product Page" 
+            module="Ammi_PromoWidget" sortOrder="20"
+            parent="Ammi_Extensions::ammiextensions"  
+            resource="Ammi_PromoWidget::main_menu"/>
+
+        <add id="Ammi_PromoWidget::configuration" 
+            title="Promo Widget In Product Page" 
+            module="Ammi_PromoWidget" sortOrder="10" 
+            parent="Ammi_PromoWidget::main_menu" 
+            action="adminhtml/system_config/edit/section/promo_widget"  
+            resource="Ammi_PromoWidget::configuration"/>
+
+    </menu>
+</config>
