@@ -4,8 +4,12 @@
         <label>Promo Message Widget</label>
         <description>Affiche un message promotionnel sur la page produit</description>
         <parameters>
-            <parameter name="message_text" xsi:type="text" label="Message Promotionnel" required="true"/>
-            <parameter name="background_color" xsi:type="text" label="Couleur de fond" required="false"/>
+            <parameter name="message_text" xsi:type="text" sort_order="10">
+                <label translate="true">Message Promotionnel</label>
+            </parameter>
+            <parameter name="background_color" xsi:type="text" sort_order="20">
+                <label translate="true">Couleur de fond</label>
+            </parameter>
         </parameters>
     </widget>
 </widgets>
